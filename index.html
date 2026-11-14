@@ -21,13 +21,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <title>دعوة زفاف</title>
 <link rel="preload" as="image" href="img07.jpg" fetchpriority="high">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Amiri+Quran&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Aref+Ruqaa:wght@400;700&family=El+Messiri:wght@400;500;600;700&family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Amiri+Quran&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{--gold:#f6e3c4;--shade:rgb(248,238,224);--bg:#3a241c;box-sizing:border-box}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:#e8d4ab;-webkit-tap-highlight-color:transparent}
 html.lock,html.lock body{overflow:hidden;height:100%}
-body{font-family:"Amiri","Noto Naskh Arabic",serif}
+body{font-family:var(--ar-body)}
 #stage{position:relative;z-index:2;width:100%;height:100vh;height:100svh;overflow:hidden;cursor:pointer;background:var(--bg)}
 #stage video,#stage .layer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 #photo{opacity:0;transition:none;pointer-events:none}
@@ -46,8 +46,8 @@ body{font-family:"Amiri","Noto Naskh Arabic",serif}
 #names{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:11svh;direction:ltr;text-align:center;pointer-events:none;color:#5e3528;
   text-shadow:0 0 22px rgba(255,242,228,.85),0 0 6px rgba(255,242,228,.6)}
 #names span{display:block;opacity:0;transform:translateY(18px);filter:blur(7px)}
-#names .n{font-family:"Great Vibes","Snell Roundhand","Brush Script MT",cursive;font-size:clamp(3rem,15vw,4.6rem);line-height:1.15;letter-spacing:.02em}
-#names .amp{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(1.5rem,7vw,2.2rem);line-height:1.5;letter-spacing:.02em;color:#8a5546}
+#names .n{font-family:var(--ar-head);font-size:clamp(3rem,15vw,4.6rem);line-height:1.15;letter-spacing:.02em}
+#names .amp{font-family:var(--ar-body);font-style:italic;font-weight:500;font-size:clamp(1.5rem,7vw,2.2rem);line-height:1.5;letter-spacing:.02em;color:#8a5546}
 #names.show span{animation:rise 1.2s cubic-bezier(.2,.7,.2,1) forwards}
 #names.show .n1{animation-delay:.1s}
 #names.show .amp{animation-delay:.4s}
@@ -82,8 +82,8 @@ body{font-family:"Amiri","Noto Naskh Arabic",serif}
 .orn{display:block;width:11cqw;height:auto;margin:0 auto .15em}
 .v{font-size:.86em;line-height:1.95;margin:.4em 0!important}
 .nm{direction:ltr;margin-top:.2em!important}
-.nm b{font:400 2em "Great Vibes","Snell Roundhand",cursive;color:#6e4034}
-.nm i{font:italic 500 1em "Cormorant Garamond",Georgia,serif;margin:0 .3em;color:#8a5546}
+.nm b{font:700 2em var(--ar-head);color:#6e4034}
+.nm i{font:normal 400 1em var(--ar-body);margin:0 .3em;color:#8a5546}
 .dn{font-size:4.4em;font-weight:700;line-height:1.05;color:#6e4034}
 .wd,.my{font-size:1.2em;font-weight:700}
 .b{display:inline-block;margin-top:.5em;padding:.65em 1.2em;border:1px solid #8a5546;border-radius:99px;color:#6e4034;text-decoration:none;font:inherit;font-size:.8em;line-height:1.2;background:transparent;cursor:pointer}
@@ -190,7 +190,7 @@ html,body{background:#bfa989}
 /* بعد صفحة حكايتنا: بدون دانتال وخلفية بيضاء ساده */
 #rest #p3 ~ .sec{background:#fff;text-shadow:none}
 /* ===== الخط العربي: النوع والحجم واللون والحركة ===== */
-:root{--ar-head:"Aref Ruqaa","Amiri","Noto Naskh Arabic",serif;--ar-body:"Amiri","Noto Naskh Arabic",serif;--ar-quran:"Amiri Quran","Amiri","Noto Naskh Arabic",serif;--gold:#9a6a3c}
+:root{--gold:#9a6a3c}
 .k,.ttl,.wd,.my,.dn,.v,.b,.g small,.g b,#hint,#more{letter-spacing:0!important}
 .k,.v,.ttl{text-wrap:balance}
 /* العناوين */
@@ -218,7 +218,7 @@ html,body{background:#bfa989}
 #hint{font-family:var(--ar-head);font-weight:700}
 #more{font-family:var(--ar-head)}
 /* الآية */
-#p2t p:nth-of-type(1){font-family:var(--ar-quran);font-size:.98em;line-height:2.1;color:var(--bur)}
+#p2t p:nth-of-type(1){font-family:var(--ar-head);font-size:.98em;line-height:2.1;color:var(--bur)}
 /* الصفحة 2: اللي فيها صورة العروسين */
 #rest #p2t .v{line-height:1.9}
 /* حكايتنا داخل الظرف */
@@ -299,7 +299,6 @@ svg.fl{width:34cqw;margin:.5em auto;color:#b0804d}
 @media(prefers-reduced-motion:reduce){#rest #p5 .ph{opacity:1;transform:translate(-50%,-50%) rotate(var(--r));transition:none}}
 
 /* ===== English edition: elegant type ===== */
-:root{--ar-head:"Cormorant Garamond","Playfair Display",Georgia,"Times New Roman",serif;--ar-body:"Cormorant Garamond",Georgia,"Times New Roman",serif}
 #bar{transform-origin:left}.pr::after{transform-origin:left}
 .k{text-transform:uppercase;font-weight:600;font-size:.74em;letter-spacing:.3em!important;line-height:1.9}
 .ttl{font-weight:600;font-style:italic;font-size:1.75em!important;letter-spacing:.02em!important;line-height:1.3}
@@ -315,14 +314,14 @@ svg.fl{width:34cqw;margin:.5em auto;color:#b0804d}
 #hint{font-style:italic;font-weight:600;font-size:1.5rem;letter-spacing:.03em;line-height:1.5}
 #more{font-style:italic;font-size:1.1rem;letter-spacing:.06em}
 #toast{font-family:var(--ar-body);letter-spacing:.03em;font-size:1.05rem}
-#p2t p:nth-of-type(1){font-family:var(--ar-quran);font-style:normal;letter-spacing:0;text-align:center}
+#p2t p:nth-of-type(1){font-family:var(--ar-head);font-style:normal;letter-spacing:0;text-align:center}
 #rest #p2t .v{font-size:1.02em;line-height:1.5}
 #rest #p3t .v{font-size:1.1em}
 #rest #p6t .ttl{font-size:1.5em!important}
 #rest #p7t .ttl{margin-bottom:.4em}
 /* first page extras */
 #names{padding-top:7.5svh}
-#names .eb,#names .sb,#names .sb2{font-family:"Cormorant Garamond",Georgia,serif;color:#5e3528}
+#names .eb,#names .sb,#names .sb2{font-family:var(--ar-body);color:#5e3528}
 #names .eb{font-size:clamp(.78rem,3.4vw,.95rem);font-weight:600;letter-spacing:.42em;text-transform:uppercase;margin-bottom:.5em;padding-left:.42em}
 #names .sb{font-size:clamp(.8rem,3.5vw,1rem);font-weight:600;letter-spacing:.24em;text-transform:uppercase;margin-top:.9em;padding-left:.24em}
 #names .sb2{font-size:clamp(1rem,4.4vw,1.2rem);font-style:italic;font-weight:500;line-height:1.35;margin-top:.5em;color:#6e4034}
@@ -514,15 +513,15 @@ html.so #fog i{animation-play-state:paused!important}
 @media(prefers-reduced-motion:reduce){.sec.on .dr:not(.in){opacity:.9}.sec.on .dr:not(.in) .dw,.sec.on svg.fl .dw{stroke-dashoffset:0}.sec.on .dr:not(.in) .lf,.sec.on svg.fl .lf{fill-opacity:.16!important}.sec.on .dr:not(.in) .pp,.sec.on svg.fl .pp{opacity:1}}
 </style>
 <style id="ar">
-:root{--ar-head:"Aref Ruqaa","Amiri",serif;--ar-body:"El Messiri","Amiri","Noto Naskh Arabic",serif;--ar-num:"Reem Kufi","Amiri",serif}
+:root{--ar-head:"Aref Ruqaa","Amiri","Noto Naskh Arabic",serif;--ar-body:"Amiri","Noto Naskh Arabic",serif;--ar-quran:"Amiri Quran","Amiri","Noto Naskh Arabic",serif;--ar-num:var(--ar-head)}
 .t,#hint,#more,#toast,.in2,#names,.nm{direction:rtl}
 .k,.ttl,.wd,.my,.v,.rom2,.dn,.b,.pr,.vcl,.vcg small,.g small,#hint,#more,#names span,.rmc{text-transform:none!important;font-style:normal!important;letter-spacing:0!important}
 .k,.ttl,.wd,.my,.dn,.vcg b,.g b{font-family:var(--ar-head)}
 .v,.rom2,.b,.in2,#hint,#more,#toast,.vcg small,.vcl,.g small,.rmc,#names .eb,#names .sb,#names .sb2,#names .amp{font-family:var(--ar-body)}
-.k{font-size:1.1em;font-weight:700}
-.v,.rom2{font-weight:700;line-height:1.9}
+.k{font-size:1.18em;font-weight:400}
+.v,.rom2{font-weight:400;line-height:2.05;font-size:1.06em}
 .wd,.my{font-weight:700;font-size:1.3em}
-.nm b,#names .n{font-family:var(--ar-head);font-weight:700;letter-spacing:0}
+.nm b,#names .n{font-family:var(--ar-head);font-weight:700;letter-spacing:0;line-height:1.5}
 .nm i{font-family:var(--ar-body);font-style:normal}
 #names .n{font-size:clamp(2.6rem,13vw,3.9rem);line-height:1.4}
 #names .eb,#names .sb{padding:0;font-size:clamp(1.1rem,4.6vw,1.35rem)}
@@ -532,19 +531,19 @@ html.so #fog i{animation-play-state:paused!important}
 #names{padding:max(4.5svh,26px) 14px 0;justify-content:flex-start;color:#5e3528}
 #names .x,#names .sb{width:100%;max-width:440px;margin-left:auto;margin-right:auto}
 #names.show .x,#names.show .sb{animation:rise 1.1s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--d,0)*1s)}
-#names .q,#names .vs{font-family:"Amiri Quran","Amiri",serif;color:#6e4034}
+#names .q,#names .vs{font-family:var(--ar-quran);color:#6e4034}
 #names .q{font-size:clamp(1.15rem,3.4svh,1.5rem);margin-bottom:.3em}
 #names .vs{font-size:clamp(.78rem,2.3svh,.98rem);line-height:1.9}
-#names .it{font-family:var(--ar-body);font-weight:700;font-size:clamp(.88rem,2.6svh,1.08rem);line-height:1.7;margin-top:.55em}
+#names .it{font-family:var(--ar-body);font-weight:400;font-size:clamp(.88rem,2.6svh,1.08rem);line-height:1.7;margin-top:.55em}
 #names .hs{display:flex;justify-content:center;gap:1.4em;font-family:var(--ar-body);font-weight:700;font-size:clamp(.92rem,2.8svh,1.15rem);line-height:1.5;margin-top:.5em;color:#6e4034}
 #names .hs b{flex:1;font-weight:700}
 #names .cp{display:flex;justify-content:center;align-items:center;gap:.4em;margin-top:.7em}
 #names .cp em{flex:1;font-style:normal;display:flex;flex-direction:column;align-items:center}
-#names .cp small{font-family:var(--ar-body);font-weight:700;font-size:clamp(.82rem,2.4svh,1rem);line-height:1.5;color:#5e3528}
+#names .cp small{font-family:var(--ar-body);font-weight:400;font-size:clamp(.82rem,2.4svh,1rem);line-height:1.5;color:#5e3528}
 #names .cp b{font-family:var(--ar-head);font-weight:700;font-size:clamp(2rem,6.4svh,3rem);line-height:1.35;color:#6e4034}
 #names .cp i{font-family:var(--ar-body);font-style:normal;font-size:1.6rem;color:#8a5546}
 #names .sb{margin-top:.8em;font-size:clamp(1.05rem,3.2svh,1.35rem);font-weight:700;color:#5e3528}
-#names .vv{font-family:var(--ar-body);font-weight:700;font-size:clamp(.95rem,2.8svh,1.15rem);line-height:1.6;margin-top:.25em;color:#6e4034}
+#names .vv{font-family:var(--ar-body);font-weight:400;font-size:clamp(.95rem,2.8svh,1.15rem);line-height:1.6;margin-top:.25em;color:#6e4034}
 #names{justify-content:space-evenly;padding:max(5svh,28px) 16px max(7svh,36px)}
 #names .q{font-size:clamp(1.3rem,4svh,1.8rem);margin:0}
 #names .vs{font-size:clamp(.85rem,min(4.1vw,2.7svh),1.1rem);line-height:2;margin:0}
@@ -554,11 +553,26 @@ html.so #fog i{animation-play-state:paused!important}
 #names .cp{margin:0}
 #names .cp small{font-size:clamp(.92rem,min(4.2vw,2.8svh),1.15rem)}
 #names .cp b{font-size:clamp(2.4rem,8svh,3.6rem)}
-body{font-family:"El Messiri","Amiri","Noto Naskh Arabic",serif}
+body{font-family:var(--ar-body)}
+html{font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;font-feature-settings:"kern","liga","calt","mark","mkmk"}
+.ttl,#hint{font-weight:700;text-shadow:0 1px 0 rgba(255,244,230,.6)}
+.v,.rom2,#names .it,#names .vv{text-wrap:balance}
+/* أسماء وأرقام بتدرج ذهبي فخم (fallback: اللون العادي) */
+.nm b,#names .n,#names .cp b,.dn,.vcg b,.g b{-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none!important;padding:.06em .04em}
+.nm b,.dn,.vcg b,.g b{background-image:linear-gradient(180deg,#8a1f38 0%,#6e1a2d 48%,#b4803f 118%)}
+#names .n,#names .cp b{background-image:linear-gradient(180deg,#6e4034 0%,#5e3528 45%,#b8884e 120%)}
+#names .n{font-size:clamp(2.9rem,14.5vw,4.4rem)}
+.nm b{font-size:2.1em}
 .dn,.vcg b,.g b,.pr b{font-family:var(--ar-num);font-variant-numeric:lining-nums}
 #names .hs b{font-family:var(--ar-head)}
 .nm b,#names .cp b{text-shadow:0 1px 0 rgba(255,244,230,.75),0 0 14px rgba(176,128,77,.35)}
 #names [hidden]{display:none!important}
+/* مرّر لأسفل: خط الرقعة + خطين ذهبيين وسهم رفيع، بنفس روح باقي الدعوة */
+#more{font-family:var(--ar-head);font-weight:400;font-size:1.15rem;line-height:1.5;color:#6e4034;text-shadow:0 1px 0 rgba(255,244,234,.8),0 0 12px rgba(255,244,234,.85)}
+#more::before,#more::after{content:"";display:inline-block;width:36px;height:1px;vertical-align:middle;margin:0 .7em;opacity:.85}
+#more::before{background:linear-gradient(90deg,transparent,#b0804d)}
+#more::after{background:linear-gradient(270deg,transparent,#b0804d)}
+#more svg{width:20px;height:20px;margin:.1rem auto 0;stroke:#9a6a3c;stroke-width:1.5}
 </style>
 </head>
 <body>
@@ -575,9 +589,9 @@ body{font-family:"El Messiri","Amiri","Noto Naskh Arabic",serif}
 </div>
 
 <main id="rest">
-<section class="sec" id="p2"> <div class="t" id="p2t"><img class="orn" alt="" src="img10.webp"> <p class="v" dir="rtl" lang="ar">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
+<section class="sec" id="p2"> <div class="t" id="p2t"><img class="orn" alt="" src="img10.webp"> <p class="v" dir="rtl" lang="ar">بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا،<br>وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
  <svg class="fl" viewBox="0 0 200 24" aria-hidden="true"><use href="#flr"/></svg>
- <p class="v">بدعوة سيادتكم لحضور<br>عقد قرآن وحفل زفاف</p><p class="nm"><b>معتز</b><i>&amp;</i><b>منةالله</b></p><img class="draw" alt="" src="img11.jpg"></div>
+ <p class="v">فرحتنا لا تكتمل إلا بوجودكم،<br>ودعواتكم هي أجمل هدية</p><img class="draw" alt="" src="img11.jpg"></div>
  <div class="t" style="padding:0"><img class="hands" alt="" src="img12.webp"></div>
  </section>
 <section class="sec" id="p3"><span class="dr tl" aria-hidden="true"><svg viewBox="0 0 120 160"><use href="#sprig"/></svg></span><span class="dr tr" aria-hidden="true"><svg viewBox="0 0 120 160"><use href="#sprig"/></svg></span> <div class="t" id="p3t"><p class="k">يوم</p><p class="wd" id="wd"></p><p class="dn" id="dn"></p><p class="my" id="my"></p><p class="v" id="tm"></p><svg class="fl" viewBox="0 0 200 24" aria-hidden="true"><use href="#flr"/></svg><p class="v" id="p3v"></p></div></section>
@@ -869,7 +883,21 @@ html.ar #fog i{animation-play-state:paused!important}
   var anims=[],base=0,total=0,barT;
   function getMax(t){if(t-maxAt>400){max=Math.max(0,root.scrollHeight-innerHeight);maxAt=t}return max}
   function ui(){btn.classList.toggle('paused',state!=='running');btn.setAttribute('aria-label',state==='running'?'Pause auto-scroll':'Play auto-scroll')}
-  function onUser(e){if(btn.contains(e.target))return;pause()}
+  var panY=null;
+  function lockTouch(on){var v=on?'none':'';root.style.touchAction=v;document.body.style.touchAction=v}
+  function onUser(e){
+    if(btn.contains(e.target))return;
+    if(e.type==='touchstart'&&state==='running'&&e.touches&&e.touches[0])panY=e.touches[0].clientY;
+    pause();
+  }
+  /* اللمسة الأولى بتوقّف الحركة وتكمّل السكرول بإيدك من نفس المكان (من غير ما الصفحة ترجع فوق) */
+  addEventListener('touchmove',function(e){
+    if(panY==null||!e.touches||!e.touches[0])return;
+    var cy=e.touches[0].clientY,dy=panY-cy;panY=cy;
+    scrollTo({top:scrollY+dy,left:0,behavior:'instant'});
+  },{capture:true,passive:true});
+  addEventListener('touchend',function(){panY=null},{capture:true,passive:true});
+  addEventListener('touchcancel',function(){panY=null},{capture:true,passive:true});
   var EV=['wheel','touchstart','pointerdown','keydown'];
 
   /* ---- تثبيت مكان السكرول الفعلي وإلغاء الـ transform ---- */
@@ -878,6 +906,7 @@ html.ar #fog i{animation-play-state:paused!important}
     clearInterval(barT);
     if(!anims.length)return;
     var sh=forceEnd?total:shift();
+    lockTouch(false);
     scrollTo(0,base+sh);
     anims.forEach(function(a){a.onfinish=null;a.cancel()});anims=[];
     els.forEach(function(e){e.style.willChange=''});
@@ -925,7 +954,7 @@ html.ar #fog i{animation-play-state:paused!important}
     if(GPU){
       base=scrollY;total=Math.max(0,root.scrollHeight-innerHeight)-base;
       if(total<=2){finish();return}
-      state='running';ui();
+      state='running';ui();lockTouch(true);
       els.forEach(function(e){e.style.willChange='transform'});
       anims=els.map(function(e){return e.animate([{transform:'translate3d(0,0,0)'},{transform:'translate3d(0,'+(-total)+'px,0)'}],{duration:total/SPEED*1000,easing:'linear',fill:'forwards'})});
       anims[0].onfinish=function(){if(state==='running')finish()};
