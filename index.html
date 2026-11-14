@@ -569,12 +569,13 @@ html{font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothin
 #names [hidden]{display:none!important}
 /* حروف عربية متصلة: ممنوع أي تباعد بين الحروف (هو اللي كان بيقطّع الكلام الذهبي) */
 #rest#rest#rest *,#stage#stage#stage *,#hint#hint#hint,#more#more#more,#toast#toast#toast{letter-spacing:0!important}
-/* مرّر لأسفل: خط الرقعة + خطين ذهبيين وسهم رفيع، بنفس روح باقي الدعوة */
-#more{font-family:var(--ar-head);font-weight:400;font-size:1.15rem;line-height:1.5;color:#6e4034;text-shadow:0 1px 0 rgba(255,244,234,.8),0 0 12px rgba(255,244,234,.85)}
-#more::before,#more::after{content:"";display:inline-block;width:36px;height:1px;vertical-align:middle;margin:0 .7em;opacity:.85}
-#more::before{background:linear-gradient(90deg,transparent,#b0804d)}
-#more::after{background:linear-gradient(270deg,transparent,#b0804d)}
-#more svg{width:20px;height:20px;margin:.1rem auto 0;stroke:#9a6a3c;stroke-width:1.5}
+/* مرّر لأسفل: سطر واحد نظيف + سهم، تحت الأسماء مش فوقها */
+#more{display:flex;flex-direction:column;align-items:center;gap:.1rem;bottom:calc(1.5% + env(safe-area-inset-bottom,0px));font-family:var(--ar-body);font-weight:700;font-size:1.05rem;line-height:1.4;color:#6e4034;text-shadow:0 1px 0 rgba(255,244,234,.85),0 0 10px rgba(255,244,234,.9)}
+#more::before,#more::after{content:none}
+#more svg{width:20px;height:20px;margin:0;stroke:#9a6a3c;stroke-width:1.6}
+#names{padding-bottom:max(13svh,76px)}
+#names .cp b{font-size:clamp(2.2rem,7svh,3.2rem)}
+#names .n{font-size:clamp(2.6rem,13vw,3.9rem)}
 </style>
 </head>
 <body>
@@ -607,11 +608,8 @@ html{font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothin
 <section class="sec" id="p7"> <div class="t" id="p7t"><p class="ttl">البرنامج</p><div id="pg"></div></div></section>
 <section class="sec fr"><span class="dr tl" aria-hidden="true"><svg viewBox="0 0 120 160"><use href="#sprig"/></svg></span><span class="dr tr" aria-hidden="true"><svg viewBox="0 0 120 160"><use href="#sprig"/></svg></span><span class="dr bl" aria-hidden="true"><svg viewBox="0 0 120 160"><use href="#sprig"/></svg></span><span class="dr br" aria-hidden="true"><svg viewBox="0 0 120 160"><use href="#sprig"/></svg></span> <div class="t" style="top:8%"><svg class="fl" viewBox="0 0 200 24" aria-hidden="true"><use href="#flr"/></svg><p class="ttl">الملابس المقترحة</p></div>
  <div class="t" style="top:19%;padding:0 7cqw"><img class="fig" alt="" src="img19.webp"></div>
- <div class="t" style="top:67%;padding:0 14cqw;line-height:1.6"><p class="v" style="margin:0!important">ألوان هادئة وأنيقة تناسب أمسية الفرح</p><p class="k" style="font-size:.8em;margin-top:.5em">بيج · أخضر هادئ · وردي فاتح · رمادي فاتح</p></div></section>
-<section class="sec fr"><span class="dr tl" aria-hidden="true"><svg viewBox="0 0 120 160"><use href="#sprig"/></svg></span><span class="dr tr" aria-hidden="true"><svg viewBox="0 0 120 160"><use href="#sprig"/></svg></span><span class="dr bl" aria-hidden="true"><svg viewBox="0 0 120 160"><use href="#sprig"/></svg></span><span class="dr br" aria-hidden="true"><svg viewBox="0 0 120 160"><use href="#sprig"/></svg></span> <div class="t" style="top:31%;padding:0 20cqw;line-height:1.5"><img class="orn" alt="" style="width:9cqw"><p class="ttl">تأكيد الحضور</p><p class="v" style="margin:.1em 0 .3em!important">يسعدنا تأكيد حضوركم</p>
- <input class="in2" id="rn" placeholder="اسمك" autocomplete="name"><select class="in2" id="rg"><option value="1">ضيف واحد</option><option value="2">ضيفان</option><option value="3">3 ضيوف</option><option value="4">4 ضيوف</option><option value="5">5 ضيوف</option></select>
- <div class="rmw"><textarea class="in2" id="rm" rows="4" maxlength="300" placeholder="اترك دعوة طيبة للعروسين… (اختياري)" aria-label="رسالتك"></textarea><span class="rmc" id="rmc">0 / 300</span></div>
- <div class="row" style="margin-top:.4em"><button class="b f" id="ry" type="button" style="padding:.65em 1.1em;margin:0">سأحضر &nbsp;♥</button><button class="b" id="rx" type="button" style="padding:.65em 1.1em;margin:0">أعتذر</button></div></div></section>
+ <div class="t" style="top:67%;padding:0 14cqw;line-height:1.6"><p class="v" style="margin:0!important">ألوان هادئة وأنيقة تناسب أمسية الفرح</p></div></section>
+
 <section class="sec fr"><span class="dr tl" aria-hidden="true"><svg viewBox="0 0 120 160"><use href="#sprig"/></svg></span><span class="dr tr" aria-hidden="true"><svg viewBox="0 0 120 160"><use href="#sprig"/></svg></span><span class="dr bl" aria-hidden="true"><svg viewBox="0 0 120 160"><use href="#sprig"/></svg></span><span class="dr br" aria-hidden="true"><svg viewBox="0 0 120 160"><use href="#sprig"/></svg></span> <div class="t" style="top:76%;line-height:1.5"><svg class="fl" viewBox="0 0 200 24" aria-hidden="true"><use href="#flr"/></svg><p class="ttl" style="font-size:1.1em">حضوركم يُكمل فرحتنا</p><p class="nm"><b>معتز</b><i>&amp;</i><b>منةالله</b></p><p class="k" style="font-size:.82em;margin-top:.9em">في انتظاركم بكل حب</p></div><img class="end-hands" alt="" src="img20.png"></section>
 </main>
 <img id="sl" class="side" alt="" src="img21.webp"><img id="sr" class="side" alt="">
@@ -719,14 +717,6 @@ html{font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothin
     for(var i=0;i<4;i++)if(v[i]!==last[i]){var e=$('cd'+i);e.textContent=N(v[i]);last[i]=v[i]}}
   cd();setInterval(cd,1000);
   var tt;function toast(m){var t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('on')},3200)}
-  function rs(ok){var el=$('rn'),n=el.value.trim();
-    if(!n){el.classList.remove('bad');void el.offsetWidth;el.classList.add('bad');el.focus();toast('من فضلك اكتب اسمك أولًا');return}
-    var m='مرحبًا، أنا '+n+(ok?'. يسعدني تأكيد حضوري':'. أعتذر لعدم تمكني من الحضور')+' في زفاف '+C.n1+' و'+C.n2+(ok?'. عدد الحضور: '+$('rg').value:'')+'.';
-    var w=$('rm').value.trim();if(w)m+=' رسالتي لكم: '+w;
-    toast('جارٍ فتح واتساب…');
-    window.open('https://wa.me/'+C.phone.replace(/\D/g,'')+'?text='+encodeURIComponent(m),'_blank')}
-  $('ry').onclick=function(){rs(1)};$('rx').onclick=function(){rs(0)};
-  $('rn').addEventListener('animationend',function(){this.classList.remove('bad')});
   var o=document.querySelectorAll('.orn');for(var i=1;i<o.length;i++)o[i].src=o[0].src;
   $('sr').src=$('sl').src;
   function mk(opt){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var c=e.target.classList;c.add(c.contains('sec')?'on':'in');o.unobserve(e.target)})},opt);return o}
@@ -804,10 +794,7 @@ html{font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothin
   sync();setInterval(sync,500);
 })();
 </script>
-<script>
-(function(){var t=document.getElementById('rm'),c=document.getElementById('rmc');if(!t||!c)return;
-  function u(){c.textContent=t.value.length+' / 300'}t.addEventListener('input',u);u()})();
-</script>
+
 <style>
 /* أثناء السكرول التلقائي: نشيل الـ blur التقيل من حركة الظهور (ده أكتر حاجة بتسبب تقطيع) */
 html.ar .t>*{filter:none!important}
