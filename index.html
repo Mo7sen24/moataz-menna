@@ -23,7 +23,7 @@
 <meta property="og:locale" content="ar_EG">
 <meta property="og:url" content="https://moataz-menna.vercel.app/">
 <meta property="og:title" content="دعوة زفاف معتز &amp; منةالله">
-<meta property="og:description" content="بقلوب يملؤها الحب ندعوكم لمشاركتنا فرحتنا · الأحد ٢٠ ديسمبر ٢٠٢٦ · قاعة حياة، القوات الجوية">
+<meta property="og:description" content="بقلوب يملؤها الحب ندعوكم لمشاركتنا فرحتنا · الأحد ٢٠ ديسمبر ٢٠٢٦ · من ٧ مساءً حتى ١٢ منتصف الليل · قاعة حياة، القوات الجوية">
 <meta property="og:image" content="https://moataz-menna.vercel.app/og-image.jpg">
 <meta property="og:image:secure_url" content="https://moataz-menna.vercel.app/og-image.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -713,17 +713,18 @@ html{font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothin
 <script>
 (function(){
   // === بيانات الدعوة: غيّرها من هنا بس ===
-  var C={n1:'معتز',n2:'منةالله',date:'2026-12-20T19:00',venue:'القوات الجوية',city:'قاعة حياة',phone:'',prog:[['7:00 م','وصول الضيوف'],['8:00 م','دخول العروسين'],['9:00 م','العشاء'],['10:00 م','الحفل']]};
+  var C={n1:'معتز',n2:'منةالله',date:'2026-12-20T19:00',end:'2026-12-21T00:00',venue:'القوات الجوية',city:'قاعة حياة',phone:'',prog:[['7:00 م','وصول الضيوف'],['8:00 م','عقد القران'],['9:00 م','العشاء'],['10:00 م','الحفل']]};
   var $=function(i){return document.getElementById(i)},L='ar-EG-u-nu-latn',D=new Date(C.date),
       N=function(x){return x.toLocaleString(L,{useGrouping:false})},P=function(x){return(x<10?'0':'')+x};
-  var hh=D.getHours(),mm=D.getMinutes(),ti=((hh%12)||12)+(mm?':'+P(mm):'')+' '+(hh<12?'صباحًا':'مساءً'),dl=D.toLocaleDateString(L,{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  var hh=D.getHours(),mm=D.getMinutes(),ti=((hh%12)||12)+(mm?':'+P(mm):'')+' '+(hh<12?'صباحًا':'مساءً'),dl=D.toLocaleDateString(L,{weekday:'long',day:'numeric',month:'long',year:'numeric'}),
+      DE=new Date(C.end),he=DE.getHours(),me=DE.getMinutes(),te=(he===0&&!me)?'١٢ منتصف الليل'.replace(/[١٢]/g,function(c){return c==='١'?'1':'2'}):((he%12)||12)+(me?':'+P(me):'')+' '+(he<12?'صباحًا':'مساءً'),TR='من الساعة '+((hh%12)||12)+(mm?':'+P(mm):'')+' '+(hh<12?'صباحًا':'مساءً')+' حتى '+te;
   $('wd').textContent=D.toLocaleDateString(L,{weekday:'long'});
   $('dn').textContent=N(D.getDate());
   $('my').textContent=D.toLocaleDateString(L,{month:'long',year:'numeric'});
-  $('tm').textContent='الساعة '+ti;$('nd').textContent=dl;$('dl').textContent=dl;
-  $('vn').textContent=C.venue;$('vc').textContent=C.city;$('vt').textContent='الساعة '+ti;$('p3v').textContent=C.venue+' – '+C.city;
-  $('sv').textContent=C.venue+' – '+C.city;$('st').textContent='الساعة '+ti;$('map').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(C.venue+' '+C.city);
-  var F=function(d){return d.getFullYear()+P(d.getMonth()+1)+P(d.getDate())+'T'+P(d.getHours())+P(d.getMinutes())+'00'},E=new Date(D.getTime()+4*36e5),
+  $('tm').textContent=TR;$('nd').textContent=dl;$('dl').textContent=dl;
+  $('vn').textContent=C.venue;$('vc').textContent=C.city;$('vt').textContent=TR;$('p3v').textContent=C.venue+' – '+C.city;
+  $('sv').textContent=C.venue+' – '+C.city;$('st').textContent=TR+' · عقد القران الساعة 8:00 مساءً';$('map').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(C.venue+' '+C.city);
+  var F=function(d){return d.getFullYear()+P(d.getMonth()+1)+P(d.getDate())+'T'+P(d.getHours())+P(d.getMinutes())+'00'},E=DE,
       T='زفاف '+C.n1+' و'+C.n2,V=C.venue+' '+C.city;
   $('cal').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(T)+'&dates='+F(D)+'/'+F(E)+'&location='+encodeURIComponent(V);
   $('ics').href='data:text/calendar;charset=utf-8,'+encodeURIComponent('BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART:'+F(D)+'\r\nDTEND:'+F(E)+'\r\nSUMMARY:'+T+'\r\nLOCATION:'+V+'\r\nEND:VEVENT\r\nEND:VCALENDAR');
